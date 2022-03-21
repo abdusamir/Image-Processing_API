@@ -8,8 +8,8 @@
     "dev": "nodemon ./src/index.ts",
     "clean": "rimraf build/",
     "build": "yarn clean && npx tsc",
-    "start": "npm run build && nodemon build/index.js",
-    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
+    "start": "nodemon  --exec npx ts-node ./src/index.ts",
+    "prettier": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "lint": "eslint . --ext .ts"
   },
   "keywords": [],
@@ -21,6 +21,7 @@
     "jasmine": "^3.10.0",
     "jasmine-spec-reporter": "^7.0.0",
     "morgan": "^1.10.0",
+    "sharp": "^0.30.3",
     "supertest": "^6.1.6"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "@types/jasmine": "^3.10.2",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.12",
+    "@types/sharp": "^0.30.0",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
