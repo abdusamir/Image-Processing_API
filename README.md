@@ -29,6 +29,7 @@ sharp for image processing
 ### Endpoint
 
 | Endpoint | Method | Query Parameters | Response |
+|----------|--------|------------------|----------|
 | /resize  | Get	  |name,width,height | 200      |
 
 ### Usage
