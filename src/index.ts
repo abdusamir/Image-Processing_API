@@ -7,28 +7,29 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 // create an instance server
 const app: Application = express();
-// HTTP request logger middleware
 
 // add routing for / path
-app.get('/images/resize', async (req: Request, res: Response) => {
+app.get('/resize', async (req: Request, res: Response) => {
   const query = req.query;
   if (query.width && query.height && fs.existsSync(`./images/full/${query.name}.jpg`)) {
     if (fs.existsSync(`./images/thumb/${query.name}_${query.width}_${query.height}.jpg`)) {
-      res.sendFile(`${query.name}_${query.width}_${query.height}.jpg`, { root: 'images/thumb/' });
+      res.status(200).sendFile(`${query.name}_${query.width}_${query.height}.jpg`, { root: 'images/thumb/' });
     } else {
       await convert(
         query.name as unknown as string,
         parseInt(query.height as string),
         parseInt(query.width as string)
       );
-      res.sendFile(`${query.name}_${query.width}_${query.height}.jpg`, { root: 'images/thumb/' });
+      res.status(200).sendFile(`${query.name}_${query.width}_${query.height}.jpg`, { root: 'images/thumb/' });
     }
   } else {
     if (fs.existsSync(`./images/full/${query.name}.jpg`)) {
-      res.sendFile(`${query.name}.jpg`, { root: 'images/full/' });
-    } else {
-      res.send(`${query.name} does not exist`);
-    }
+      res.status(200).sendFile(`${query.name}.jpg`, { root: 'images/full/' });
+    } else if( query.name) {
+      res.status(404).send(`${query.name} does not exist`);
+    } else{
+      res.status(200).send('Welcome to the resizing Endpoint');
+  }
   }
 });
 

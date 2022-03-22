@@ -12,9 +12,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
-    'no-use-before-define': ['error', { functions: true, classes: true }],
-    'prettier/prettier': 2, // Means error
-    'no-console': 1, // Means warning
+    'no-use-before-define': ['error', { functions: true, classes: true }],  // Means warning
     'no-var': 'error',
     'prefer-const': 'error'
   }

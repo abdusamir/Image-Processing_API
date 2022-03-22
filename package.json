@@ -7,7 +7,7 @@
     "test": "npx tsc && jasmine",
     "dev": "nodemon ./src/index.ts",
     "clean": "rimraf build/",
-    "build": "yarn clean && npx tsc",
+    "build": "npx tsc",
     "start": "nodemon  --exec npx ts-node ./src/index.ts",
     "prettier": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "lint": "eslint . --ext .ts"
