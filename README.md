@@ -1,4 +1,4 @@
-# Welcome to The Image-Processing-Api 
+# Welcome to The Image-Processing-API
 
 ## This Project is submitted to udacity Fullstack JavaScript Nanodegree
 
