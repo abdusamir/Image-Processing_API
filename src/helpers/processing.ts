@@ -7,10 +7,9 @@ const convert = async (name: string, height: number, width: number):Promise<bool
     .resize(width as unknown as number, height)
     .toFile(`./images/thumb/${name}_${width}_${height}.jpg`).then(()=>{
       return true
+    }).catch((err)=>{
+      
     })
-    .catch(function (err) {
-      console.log(err); 
-    });
     return false;
 };
 export default convert;

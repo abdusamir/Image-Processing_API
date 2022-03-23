@@ -47,9 +47,7 @@ var convert = function (name, height, width) { return __awaiter(void 0, void 0, 
                     .resize(width, height)
                     .toFile("./images/thumb/".concat(name, "_").concat(width, "_").concat(height, ".jpg")).then(function () {
                     return true;
-                })
-                    .catch(function (err) {
-                    console.log(err);
+                }).catch(function (err) {
                 })];
             case 1:
                 _a.sent();
